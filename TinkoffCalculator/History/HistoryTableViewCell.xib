@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="92" id="QxP-br-kYP" customClass="HistoryTableViewCell" customModule="TinkoffCalculator" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="92"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QxP-br-kYP" id="bjc-Ee-dNy">
+                <rect key="frame" x="0.0" y="0.0" width="393" height="92"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L98-Zt-QVN">
+                        <rect key="frame" x="15" y="10" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obD-uV-ha4">
+                        <rect key="frame" x="15" y="61.000000000000007" width="42" height="20.333333333333336"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="L98-Zt-QVN" firstAttribute="bottom" secondItem="bjc-Ee-dNy" secondAttribute="centerY" constant="-15" id="DVx-sW-ES5"/>
+                    <constraint firstItem="obD-uV-ha4" firstAttribute="leading" secondItem="L98-Zt-QVN" secondAttribute="leading" id="Fgc-iG-LSA"/>
+                    <constraint firstItem="L98-Zt-QVN" firstAttribute="leading" secondItem="bjc-Ee-dNy" secondAttribute="leading" constant="15" id="Xaq-Dc-OuJ"/>
+                    <constraint firstItem="obD-uV-ha4" firstAttribute="leading" secondItem="bjc-Ee-dNy" secondAttribute="leading" constant="15" id="XpC-be-f4O"/>
+                    <constraint firstItem="obD-uV-ha4" firstAttribute="top" secondItem="bjc-Ee-dNy" secondAttribute="centerY" constant="15" id="cAh-gh-cFH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="expressionLabel" destination="obD-uV-ha4" id="LHd-V1-iBP"/>
+                <outlet property="resultLabel" destination="L98-Zt-QVN" id="U6p-pG-IPc"/>
+            </connections>
+            <point key="canvasLocation" x="-153.43511450381678" y="19.718309859154932"/>
+        </tableViewCell>
+    </objects>
+</document>

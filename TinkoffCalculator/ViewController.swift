@@ -42,13 +42,16 @@ enum CalculationHistoryItem {
 class ViewController: UIViewController {
     
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var historyButton: UIButton!
     
     var calculationHistory: [CalculationHistoryItem] = []
+    var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         resetResultLabelText()
+        historyButton.accessibilityIdentifier = "historyButton"
     }
     
     var numberFormatter: NumberFormatter {
@@ -116,6 +119,7 @@ class ViewController: UIViewController {
             let result = try calculate()
             
             resultLabel.text = numberFormatter.string(from: NSNumber(value: result))
+            calculations.append((calculationHistory, result))
         } catch {
             resultLabel.text = "🧮 Ошибка 🧮"
         }
@@ -127,7 +131,7 @@ class ViewController: UIViewController {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let calculationsListVC = sb.instantiateViewController(identifier: "CalculationsListViewController")
         if let vc = calculationsListVC as? CalculationsListViewController {
-            vc.result = resultLabel.text
+            vc.calculations = calculations
         }
         
         navigationController?.pushViewController(calculationsListVC, animated: true)
@@ -154,4 +158,3 @@ class ViewController: UIViewController {
         resultLabel.text = "0"
     }
 }
-
