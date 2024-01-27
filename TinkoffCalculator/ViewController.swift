@@ -45,6 +45,12 @@ class ViewController: UIViewController {
     
     var calculationHistory: [CalculationHistoryItem] = []
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        resetResultLabelText()
+    }
+    
     var numberFormatter: NumberFormatter {
         let numberFormatter = NumberFormatter()
         
@@ -117,11 +123,15 @@ class ViewController: UIViewController {
         calculationHistory.removeAll()
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func showCalculationsList(_ sender: Any) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let calculationsListVC = sb.instantiateViewController(identifier: "CalculationsListViewController")
+        if let vc = calculationsListVC as? CalculationsListViewController {
+            vc.result = resultLabel.text
+            print(vc.result!)
+        }
         
-        resetResultLabelText()
+        navigationController?.pushViewController(calculationsListVC, animated: true)
     }
     
     func calculate() throws -> Double {
