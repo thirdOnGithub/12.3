@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         resetResultLabelText()
-        historyButton.accessibilityIdentifier = "historyButton"
+        historyButton.accessibilityIdentifier = "toHistoryPageButton"
     }
     
     var numberFormatter: NumberFormatter {
