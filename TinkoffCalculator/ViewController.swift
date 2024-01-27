@@ -128,7 +128,6 @@ class ViewController: UIViewController {
         let calculationsListVC = sb.instantiateViewController(identifier: "CalculationsListViewController")
         if let vc = calculationsListVC as? CalculationsListViewController {
             vc.result = resultLabel.text
-            print(vc.result!)
         }
         
         navigationController?.pushViewController(calculationsListVC, animated: true)
