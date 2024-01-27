@@ -9,13 +9,7 @@ import UIKit
 
 class CalculationsListViewController: UIViewController {
     
-    let dateLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Current Date"
-        label.font = .systemFont(ofSize: 22, weight: .bold)
-        return label
-    }()
-    
+    var dateLabel = UILabel()
     var calculations: [(expression: [CalculationHistoryItem], result: Double)] = []
     @IBOutlet weak var tableView: UITableView!
     
@@ -40,14 +34,19 @@ class CalculationsListViewController: UIViewController {
 
         tableView.backgroundColor = UIColor.systemGray5
         
+        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        header.backgroundColor = .systemGray3
+        
+        dateLabel = UILabel(frame: header.bounds)
+        dateLabel.textAlignment = .center
+        header.addSubview(dateLabel)
+        
+        tableView.tableHeaderView = header
+        
         let nib = UINib(nibName: "HistoryTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "HistoryTableViewCell")
         
         updateDate()
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return dateLabel.text
     }
     
     @IBAction func dismissVC(_ sender: Any) {
